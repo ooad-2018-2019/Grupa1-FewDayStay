@@ -3,10 +3,9 @@
 ## Tema: Few day stay
 
 **Članovi tima**:
-1. Nadija Borovina
-2. Jasmin Bajrić
-3. Nedžad Hadžiosmanović
-
+1. [Nadija Borovina] (https://github.com/lizardqueen98)
+2. [Jasmin Bajrić] (https://github.com/jbajric)
+3. [Nedžad Hadžiosmanović] (https://github.com/nhadziosma1)
 
 ### Opis teme
 - Putnici više neće morati brinuti da li će naći prostor u kojem će prenoćiti ukoliko se odluče za iznenadni put, jer sve što će im trebati je aplikacija “Few day stay”. Kroz nju će putnik moći naći prostor koji najbolje odgovara njegovim potrebama i ograničenjima, uz pomoć mnogobrojnih filtera koje nudi ova aplikacija. Proces rezervisanja će biti brz i jednostavan. Da bi poboljšali iskustvo naših korisnika, aplikacija ima opciju pomoću koje nakon vremena provedenog u nekom prostoru ocjenjuju isti. Aplikacija je također namijenjena i za ljude koje žele iznajmiti svoj prostor. Iznajmljivanje prostora se vrši prebacivanjem korisničkog profila u tzv. “vlasnik mode”(vlasnik režim rada) koji nastupa dopunom određenih informacija te dodavanjem barem jednog objekta za iznajmljivanje. “Vlasnik mode” ne ograničava korisnika da koristi pogodnosti aplikacije kao i običan putnik.
@@ -28,7 +27,7 @@
 
 - Vlasnik kao i korisnik imaju mogućnost pregleda ocjena svih objekata.
 
-- Vlasnik ima mogućnost skidanja nekog objekta sa stranice ukoliko više ne želi iz nekoga razloga da ga iznajmljuje.
+- Vlasnik ima mogućnost uklanjanja/brisanja nekog objekta sa stranice ukoliko više ne želi iz nekoga razloga da ga iznajmljuje.
 
 - Vlasnik ima mogućnost ažuriranja objekta, koji je već objavio kao i dodavanja novih.
 
