@@ -147,7 +147,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 231,
+									"left": 232,
 									"top": 162,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -168,8 +168,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 246,
-									"top": 162,
+									"left": 247,
+									"top": 161,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -189,7 +189,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 202,
+									"left": 203,
 									"top": 163,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -208,7 +208,7 @@
 								"$ref": "AAAAAAFp/vuvX538TpU="
 							},
 							"lineStyle": 1,
-							"points": "217:132;218:207",
+							"points": "217:132;220:207",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFp/vwT954cyFY="
@@ -240,8 +240,8 @@
 										"$ref": "AAAAAAFp/v63fJ4wHv4="
 									},
 									"font": "Arial;13;0",
-									"left": 30,
-									"top": 263,
+									"left": 32,
+									"top": 258,
 									"width": 168.35888671875,
 									"height": 13,
 									"alpha": -1.6039648754809028,
@@ -263,8 +263,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 247,
-									"top": 260,
+									"left": 248,
+									"top": 261,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -284,7 +284,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 203,
+									"left": 204,
 									"top": 262,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -303,7 +303,7 @@
 								"$ref": "AAAAAAFp/vvp1p4BgC4="
 							},
 							"lineStyle": 1,
-							"points": "218:249;219:287",
+							"points": "220:249;219:287",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFp/v63fJ4yUgU="
@@ -771,7 +771,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -384,
+											"left": -464,
 											"top": -24,
 											"height": 13
 										},
@@ -782,11 +782,11 @@
 												"$ref": "AAAAAAFp/vvp154CF4I="
 											},
 											"font": "Arial;13;1",
-											"left": 173,
+											"left": 133,
 											"top": 215,
-											"width": 92.47900390625,
+											"width": 177.00439453125,
 											"height": 13,
-											"text": "Objava objekta"
+											"text": "Zahtjev za brisanjem objekta"
 										},
 										{
 											"_type": "LabelView",
@@ -796,7 +796,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -384,
+											"left": -464,
 											"top": -24,
 											"width": 86.6708984375,
 											"height": 13,
@@ -810,16 +810,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -384,
+											"left": -464,
 											"top": -24,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 168,
+									"left": 128,
 									"top": 208,
-									"width": 102.47900390625,
+									"width": 187.00439453125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFp/vvp154DJXY="
@@ -840,9 +840,9 @@
 							},
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 168,
+							"left": 128,
 							"top": 208,
-							"width": 102.47900390625,
+							"width": 187.00439453125,
 							"height": 41,
 							"nameCompartment": {
 								"$ref": "AAAAAAFp/vvp154CF4I="
@@ -1052,7 +1052,7 @@
 											"font": "Arial;13;0",
 											"left": -208,
 											"top": -32,
-											"width": 86.6708984375,
+											"width": 88,
 											"height": 13,
 											"text": "(from Activity1)"
 										},
@@ -1525,7 +1525,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFp/vnLtZ2v0tk="
 							},
-							"name": "Objava objekta"
+							"name": "Zahtjev za brisanjem objekta"
 						},
 						{
 							"_type": "UMLFlowFinalNode",
