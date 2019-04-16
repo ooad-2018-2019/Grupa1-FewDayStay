@@ -1,5 +1,7 @@
 # Grupa1-OMGSestre
 
+![logo](logo.jpg)
+
 ## Tema: Few day stay
 
 **Članovi tima**:
