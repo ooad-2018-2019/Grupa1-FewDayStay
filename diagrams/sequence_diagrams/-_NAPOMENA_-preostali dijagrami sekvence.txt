@@ -1,0 +1,15 @@
+Naziv dijagrama aktivnosti: "ObjavljivanjeObjekta_PrelazakU'Vlasnik_mode'"
+
+
+Neznatna razlika u izvedbi dijagrama sekvenci ovog i slucaja iznajmljivanja objekta, navodimo nekoliko korekcija
+
+1. Nakon pristupa sistemu, ako postoji vec objekat i ako je korisnik vlasnik ažuriraju se podaci o objektu
+2. Nakon pristupa sistemu, ako ne postoji objekat, dodaje se u listu objekata i dodjeljuje se privilegija vlasnika korisniku.
+
+
+Naziv dijagrama aktivnosti: "Izvršenje pretrage i rezervacija"
+
+Neznatna razlika u izvedbi dijagrama sekvenci ovog i slucaja iznajmljivanja objekta, navodimo nekoliko korekcija
+
+1. Izbacuje se detaljna analiza kako tece proces rezervacije(provjera datuma zauzetosti i slicno)
+2. Ukoliko nije pronaden objekat ili se korisniku nije dopao objekat i ne želi rezervaciju, završava se sekvenca

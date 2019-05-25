@@ -3525,108 +3525,6 @@
 									}
 								},
 								{
-									"_type": "UMLCombinedFragmentView",
-									"_id": "AAAAAAFq7P9s7qQWhUE=",
-									"_parent": {
-										"$ref": "AAAAAAFq7PUz06JAHc0="
-									},
-									"model": {
-										"$ref": "AAAAAAFq7P9s7qQUMl8="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFq7P9s7qQX5rI=",
-											"_parent": {
-												"$ref": "AAAAAAFq7P9s7qQWhUE="
-											},
-											"font": "Arial;13;0",
-											"left": 37.07177734375,
-											"top": 93,
-											"width": 93.498046875,
-											"height": 13,
-											"text": "Brisanje objekta"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFq7P9s7qQYJmU=",
-											"_parent": {
-												"$ref": "AAAAAAFq7P9s7qQWhUE="
-											},
-											"font": "Arial;13;1",
-											"left": 13,
-											"top": 93,
-											"width": 19.07177734375,
-											"height": 13,
-											"text": "opt"
-										},
-										{
-											"_type": "UMLInteractionOperandCompartmentView",
-											"_id": "AAAAAAFq7P9s7qQZuFc=",
-											"_parent": {
-												"$ref": "AAAAAAFq7P9s7qQWhUE="
-											},
-											"model": {
-												"$ref": "AAAAAAFq7P9s7qQUMl8="
-											},
-											"subViews": [
-												{
-													"_type": "UMLInteractionOperandView",
-													"_id": "AAAAAAFq7P9tA6Qlh6c=",
-													"_parent": {
-														"$ref": "AAAAAAFq7P9s7qQZuFc="
-													},
-													"model": {
-														"$ref": "AAAAAAFq7P9s7qQVAGw="
-													},
-													"subViews": [
-														{
-															"_type": "LabelView",
-															"_id": "AAAAAAFq7P9tA6Qm3Ig=",
-															"_parent": {
-																"$ref": "AAAAAAFq7P9tA6Qlh6c="
-															},
-															"font": "Arial;13;0",
-															"left": 28,
-															"top": 126,
-															"width": 72.2490234375,
-															"height": 13,
-															"text": "[želi obrisati]"
-														}
-													],
-													"font": "Arial;13;0",
-													"left": 8,
-													"top": 111,
-													"width": 497,
-													"height": 322,
-													"guardLabel": {
-														"$ref": "AAAAAAFq7P9tA6Qm3Ig="
-													}
-												}
-											],
-											"font": "Arial;13;0",
-											"left": 8,
-											"top": 111,
-											"width": 497,
-											"height": 322
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 8,
-									"top": 88,
-									"width": 497,
-									"height": 353,
-									"nameLabel": {
-										"$ref": "AAAAAAFq7P9s7qQX5rI="
-									},
-									"frameTypeLabel": {
-										"$ref": "AAAAAAFq7P9s7qQYJmU="
-									},
-									"operandCompartment": {
-										"$ref": "AAAAAAFq7P9s7qQZuFc="
-									}
-								},
-								{
 									"_type": "UMLSeqMessageView",
 									"_id": "AAAAAAFq7QCWzaQ42dI=",
 									"_parent": {
@@ -4380,26 +4278,6 @@
 					"fragments": [
 						{
 							"_type": "UMLCombinedFragment",
-							"_id": "AAAAAAFq7P9s7qQUMl8=",
-							"_parent": {
-								"$ref": "AAAAAAFq7PUz06I/nGQ="
-							},
-							"name": "Brisanje objekta",
-							"interactionOperator": "opt",
-							"operands": [
-								{
-									"_type": "UMLInteractionOperand",
-									"_id": "AAAAAAFq7P9s7qQVAGw=",
-									"_parent": {
-										"$ref": "AAAAAAFq7P9s7qQUMl8="
-									},
-									"name": "želi obrisati",
-									"guard": "želi obrisati"
-								}
-							]
-						},
-						{
-							"_type": "UMLCombinedFragment",
 							"_id": "AAAAAAFq7QHVf6ROBLs=",
 							"_parent": {
 								"$ref": "AAAAAAFq7PUz06I/nGQ="
@@ -4448,7 +4326,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7PUz0qI+8AU="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -4456,7 +4335,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7PUz0qI+8AU="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -4464,7 +4344,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7PUz0qI+8AU="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				}
 			]
 		}
