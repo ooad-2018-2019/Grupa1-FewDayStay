@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BitmapNet;
 
-namespace FewDayStay.Models
+namespace Few_Day_Stay.Models
 {
     public class Objekat
 {
