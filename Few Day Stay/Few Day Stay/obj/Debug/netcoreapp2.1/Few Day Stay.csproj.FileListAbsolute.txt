@@ -30,3 +30,35 @@ F:\Druga godina\2018-2019\IV semestar - OOAD\Grupa1-FewDayStay\Few Day Stay\Few 
 F:\Druga godina\2018-2019\IV semestar - OOAD\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.dll
 F:\Druga godina\2018-2019\IV semestar - OOAD\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.pdb
 F:\Druga godina\2018-2019\IV semestar - OOAD\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.csproj.CopyComplete
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.csprojAssemblyReference.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.csproj.CoreCompileInputs.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.RazorAssemblyInfo.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.RazorAssemblyInfo.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.AssemblyInfoInputs.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.AssemblyInfo.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.dll
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.pdb
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.deps.json
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.runtimeconfig.json
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.runtimeconfig.dev.json
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.dll
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.pdb
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.Views.dll
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\bin\Debug\netcoreapp2.1\Few Day Stay.Views.pdb
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.TagHelpers.input.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.TagHelpers.output.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.RazorCoreGenerate.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.RazorTargetAssemblyInfo.cache
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.RazorTargetAssemblyInfo.cs
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.Views.pdb
+C:\Users\nadij\Documents\GitHub\Grupa1-FewDayStay\Few Day Stay\Few Day Stay\obj\Debug\netcoreapp2.1\Few Day Stay.csproj.CopyComplete
