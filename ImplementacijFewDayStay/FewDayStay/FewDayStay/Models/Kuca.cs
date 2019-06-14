@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BitmapNet;
 
-namespace Few_Day_Stay.Models
+namespace FewDayStay.Models
 {
     public class Kuca : Objekat
 {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Few_Day_Stay
+namespace FewDayStay.Models
 {
     public class Korisnik
 {
