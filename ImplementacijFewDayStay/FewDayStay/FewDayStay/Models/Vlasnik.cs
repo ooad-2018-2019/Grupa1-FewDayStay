@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FewDayStay.Models
 {
-    public class Vlasnik
-{
-}
+    public class Vlasnik : Osoba
+    {
+    }
 }

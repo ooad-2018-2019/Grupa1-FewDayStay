@@ -14,8 +14,12 @@ namespace FewDayStay.Models
         public int Kvadratura { get; set; }
         public double CijenaPoNoci { get; set; }
         public double Ocjena { get; set; }
+
+        //preko diskriminatora u tabeli, iako ne psotoji kolona "VlaskinID" ce biti generisano da radi
+        public int VlasnikID { get; set; }
         public int LokacijaID { get; set; }
 
         public virtual Lokacija Lokacija { get; set; }
+        public virtual Vlasnik Vlasnik { get; set;}
     }
 }
