@@ -7,7 +7,7 @@ using BitmapNet;
 
 namespace FewDayStay.Models
 {
-    public class Objekat
+    public abstract class Objekat
 {
         [ScaffoldColumn(false)]
         public int ObjekatID { get; set; }

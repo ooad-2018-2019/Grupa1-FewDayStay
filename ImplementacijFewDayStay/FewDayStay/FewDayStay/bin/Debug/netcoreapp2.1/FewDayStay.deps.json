@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "e071b1a7c9d575b1b3d9ba6c9a1be1d9c6701ca2"
+    "signature": "8be1dd1132dc8afa32365acb8fe9b4f8cd455755"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "FewDayStay/1.0.0": {
         "dependencies": {
+          "Bitmap.Net": "1.0.1",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0"
@@ -33,6 +34,17 @@
         },
         "compile": {
           "FewDayStay.dll": {}
+        }
+      },
+      "Bitmap.Net/1.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/BitmapNet.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/BitmapNet.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3154,6 +3166,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Bitmap.Net/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p4j7Vnm0cmtr/CgT1ckdvTqJ38S6zsc1uGXKC0dos6Vx6ik9WWTVkJAIsUbuAz0lGUUS/bwikf0YlGpmvXon0A==",
+      "path": "bitmap.net/1.0.1",
+      "hashPath": "bitmap.net.1.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",

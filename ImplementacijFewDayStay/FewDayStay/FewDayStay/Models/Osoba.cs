@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FewDayStay.Models
 {
-    public class Osoba
+    public abstract class Osoba
     {
         //BUKVALNO IME KLASE + ID!!!!!!!!!!!!!!!!!!!!
         [ScaffoldColumn(false)]
