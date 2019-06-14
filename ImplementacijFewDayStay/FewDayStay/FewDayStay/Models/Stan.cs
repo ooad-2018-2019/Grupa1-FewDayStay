@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 namespace FewDayStay.Models
 {
     public class Stan : Objekat
-{
-        int brojSprata;
-        string imeNaUlazu;
+    {
+        //U IZVEDENIM KLASAM IZ NEKE KLAS ENEMA NI FOREIGN KEY-EVA, NI PRIMARY KEY-EVA
 
-        public int BrojSprata { get => brojSprata; set => brojSprata = value; }
-        public string ImeNaUlazu { get => imeNaUlazu; set => imeNaUlazu = value; }
+        public int BrojSprata { get; set; }
+        public string ImeNaUlazu { get; set;}
     }
 }

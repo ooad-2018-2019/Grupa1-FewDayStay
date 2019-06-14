@@ -15,7 +15,5 @@ namespace FewDayStay.Models
 
         public virtual Korisnik Korisnik { get; set; }
         public virtual Objekat Objekat { get; set; }
-
-
     }
 }

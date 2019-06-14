@@ -5,34 +5,20 @@ using System.Threading.Tasks;
 
 namespace FewDayStay.Models
 {
+    //PRIMARNI KLJUC MORA BITI "imeklaseID", ISTO I ZA FOREIGN KEYEVE
     public class Korisnik
-{
-    String id = "";
-    String naziv = "";
-    String email = "";
-    String sifra = "";
-    String brojTelefona;
-    double racun = 0;
-    Lokacija lokacija;
-
-    public Korisnik(string id, string naziv, string email, string sifra, string brojTelefona, double racun, Lokacija lokacija)
     {
-        this.Id = id;
-        this.Naziv = naziv;
-        this.Email = email;
-        this.Sifra = sifra;
-        this.BrojTelefona = brojTelefona;
-        this.Racun = racun;
-        this.Lokacija = lokacija;
+        //NADKLASA IMA PRIMARY KEY I FOREIGN KEY TABELE (I AKO IMA NEKE DODATNE ATRIBUTE)
+
+        public int korisnikID { get; set;}
+        public string Naziv { get; set;}
+        public string Email { get; set;}
+        public string Sifra { get; set;}
+        public string BrojTelefona { get; set;}
+        public double Racun { get; set;}
+
+        //za foreign key-eve mora biti ovako FORMAT!!!!!!!!!!!!!!!
+        public int LokacijaID { get; set;}
+        public virtual Lokacija Lokacija { get; set;}
     }
-
-    public string Id { get => id; set => id = value; }
-    public string Naziv { get => naziv; set => naziv = value; }
-    public string Email { get => email; set => email = value; }
-    public string Sifra { get => sifra; set => sifra = value; }
-    public string BrojTelefona { get => brojTelefona; set => brojTelefona = value; }
-    public double Racun { get => racun; set => racun = value; }
-    public Lokacija Lokacija { get => lokacija; set => lokacija = value; }
-
-}
 }
