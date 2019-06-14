@@ -7,28 +7,15 @@ namespace FewDayStay.Models
 {
     public class Iznajmljivanje
     {
-        //ATRIBUTI
-        private Korisnik korisnik;
-        private Objekat objekat;
-        private DateTime pocetniDatum;
-        private DateTime krajnjiDatum;
+        public int IznajmljivanjeID { get; set; }
+        public int KorisnikID { get; set; }
+        public int ObjekatID { get; set; }
+        public DateTime PocetniDatum { get; set; }
+        public DateTime KrajnjiDatum { get; set; }
 
-        //GETTERI I SETTERI
-        public Korisnik Korisnik { get => korisnik; set => korisnik = value; }
-        public Objekat Objekat { get => objekat; set => objekat = value; }
-        public DateTime PocetniDatum { get => pocetniDatum; set => pocetniDatum = value; }
-        public DateTime KrajnjiDatum { get => krajnjiDatum; set => krajnjiDatum = value; }
+        public virtual Korisnik Korisnik { get; set; }
+        public virtual Objekat Objekat { get; set; }
 
-        //KONSTRUKTOR
-        public Iznajmljivanje(Korisnik korisnik, Objekat objekat, DateTime pocetniDatum, DateTime krajnjiDatum)
-        {
-            this.korisnik = korisnik;
-            this.objekat = objekat;
-            this.pocetniDatum = pocetniDatum;
-            this.krajnjiDatum = krajnjiDatum;
-        }
-
-        //METODE
 
     }
 }

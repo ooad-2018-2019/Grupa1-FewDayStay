@@ -8,11 +8,8 @@ namespace FewDayStay.Models
 {
     public class Kuca : Objekat
 {
-        int brojSpratova;
-        bool imaDvoriste;
-        bool imaBazen;
-        public int BrojSpratova { get => brojSpratova; set => brojSpratova = value; }
-        public bool ImaDvoriste { get => imaDvoriste; set => imaDvoriste = value; }
-        public bool ImaBazen { get => imaBazen; set => imaBazen = value; }
+        public int BrojSpratova { get; set; }
+        public bool ImaDvoriste { get; set; }
+        public bool ImaBazen { get; set; }
     }
 }

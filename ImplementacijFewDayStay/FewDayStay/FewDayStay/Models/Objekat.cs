@@ -8,22 +8,14 @@ namespace FewDayStay.Models
 {
     public class Objekat
 {
-        int brojKreveta;
-        string naziv;
-        int kvadratura;
-        Lokacija lokacija;
-        double cijenaPoNoci;
-        double ocjena;
-        List<Bitmap> slike;
-        public int BrojKreveta { get => brojKreveta; set => brojKreveta = value; }
-        public string Naziv { get => naziv; set => naziv = value; }
-        public int Kvadratura { get => kvadratura; set => kvadratura = value; }
-        public double CijenaPoNoci { get => cijenaPoNoci; set => cijenaPoNoci = value; }
-        public double Ocjena { get => ocjena; set => ocjena = value; }
-        public Lokacija Lokacija { get => lokacija; set => lokacija = value; }
+        public int ObjekatID { get; set; }
+        public int BrojKreveta { get; set; }
+        public string Naziv { get; set; }
+        public int Kvadratura { get; set; }
+        public double CijenaPoNoci { get; set; }
+        public double Ocjena { get; set; }
+        public int LokacijaID { get; set; }
 
-        public void ocijeni(double ocjena)
-        {
-        }
-}
+        public virtual Lokacija Lokacija { get; set; }
+    }
 }
