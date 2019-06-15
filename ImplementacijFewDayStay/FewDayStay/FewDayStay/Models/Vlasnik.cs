@@ -7,5 +7,6 @@ namespace FewDayStay.Models
 {
     public class Vlasnik : Osoba
     {
+        //nadija
     }
 }
