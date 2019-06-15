@@ -18,4 +18,6 @@ namespace FewDayStay.Models
         [Required]
         public bool ImaBazen { get; set; }
     }
+
+    //aaaaaaaaaaaaaaaaaaaaaaaaa
 }
