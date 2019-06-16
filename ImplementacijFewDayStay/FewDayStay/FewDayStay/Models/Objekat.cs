@@ -8,7 +8,7 @@ using BitmapNet;
 namespace FewDayStay.Models
 {
     public abstract class Objekat
-{
+    {
         [ScaffoldColumn(false)]
         public int ObjekatID { get; set; }
 
@@ -24,14 +24,14 @@ namespace FewDayStay.Models
         [Required]
         public double CijenaPoNoci { get; set; }
 
-            [Required]
-            public double Ocjena { get; set; }
+        [Required]
+        public double Ocjena { get; set; }
 
         //preko diskriminatora u tabeli, iako ne psotoji kolona "VlaskinID" ce biti generisano da radi
         public int VlasnikID { get; set; }
         public int LokacijaID { get; set; }
 
         public virtual Lokacija Lokacija { get; set; }
-        public virtual Vlasnik Vlasnik { get; set;}
+        public virtual Vlasnik Vlasnik { get; set; }
     }
 }

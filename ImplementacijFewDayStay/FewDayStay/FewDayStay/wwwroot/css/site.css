@@ -35,3 +35,133 @@ body {
         display: none;
     }
 }
+
+.dodajMarginuSaSvihStrana
+{
+    margin : 10px;
+}
+
+.dodajMarginuGore
+{
+    margin-top: 15px;
+}
+
+.dodajMarginuGoreIDole
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*za svaki tag se veze koji je tipa "body" */
+body
+{
+    /*moze umjesto ova dva taga i jedan tag: "backgorund: url("...") no-repeat*/
+    /*ovo "50%" se odnosi na property, "background-position"*/
+    background: url("../images/logo.png") no-repeat 50%;
+    background-color: rgb(200, 228, 255);
+}
+
+.prozirnaPozadina
+{
+    /*zadnji parametar govori koliko je nesto prozirno*/
+    background-color: rgba(18, 20, 31, 0.3);
+}
+
+.naslov
+{
+    font-family: Constantia;
+    font-size: 20px;
+}
+
+/*znaci da ce vrijediti za svaki parni i neparni red tabela*/
+tr:nth-child(even) 
+{
+    background: #CCC
+}
+tr:nth-child(odd) 
+{
+    background: #FFF
+}
+
+.nazivUTabeli
+{
+    text-align: left;
+}
+
+.brojUTabeli
+{
+    text-align:center
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/*ako je na pocetku tacka, zanci da je to kalsa, a ako je samo naziv, to znaci da se odnosi na svaki tag tog tipa,
+    kao npr. sto se "tr" na svaki red tabele*/
+
+/*--------SLJEDECI KOD JE PREKOPIRAN D ABI IMALI SLIKE SLIKA*/
+.slider-holder {
+    width: 550px;
+    height: 350px;
+    background-color: yellow;
+    text-align: center;
+    /*ovaj properti se koristi da sve slike ne bi bile vidljive odjednom, vec kad se klikne na ikonicu za prelazak*/
+    overflow:hidden;
+}
+
+.image-holder 
+{
+    width: 1650px;
+    background-color: orange;
+    height: 350px;
+    clear: both;
+    position:relative;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+    transition: left 2s;
+}
+
+.slider-image {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+
+    object-fit: contain;
+    width: 550px;
+    height: 350px;
+}
+
+#slider-image-1:target ~ .image-holder {
+    left: 0px;
+}
+
+#slider-image-2:target ~ .image-holder {
+    left: -550px;
+}
+
+#slider-image-3:target ~ .image-holder {
+    left: -1100px;
+}
+
+.button-holder {
+    position: relative;
+    top: -20px;
+}
+
+.slider-change {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: brown;
+}
+/*--------*/

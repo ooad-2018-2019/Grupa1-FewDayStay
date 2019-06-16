@@ -26,13 +26,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">FewDayStay</a>
+                <a asp-area="" asp-controller="SignInLogIn" asp-action="SignInLogIn" class="navbar-brand">FewDayStay</a>
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <!--asp-controller="ime_kontrolera" asp-action="ime-akcije koja se nalazi u kontroleru"-->
+                    <li><a asp-area="" asp-controller="PretragaObjekata" asp-action="PretragaObjekata">Pretraga</a></li>
                 </ul>
             </div>
         </div>

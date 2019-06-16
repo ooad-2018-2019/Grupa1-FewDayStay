@@ -14,5 +14,20 @@ namespace FewDayStay.Models
 
         [Required]
         public string ImeNaUlazu { get; set;}
+
+        //konstruktor,samo da bi se mogla inicijalizirati polja da se visi hoce li ih u bazi ispisati
+        public Stan(int objID, int brKrev, string name, int kvadra, double cijen, double ocj, int vlID, int lokID)
+        {
+            //atributi iz "Objkat" klase
+            this.ObjekatID = objID;
+            this.BrojKreveta = brKrev;
+            this.Naziv = name;
+            this.Kvadratura = kvadra;
+            this.CijenaPoNoci = cijen;
+            this.VlasnikID = vlID;
+            this.LokacijaID = lokID;
+
+            
+        }
     }
 }
