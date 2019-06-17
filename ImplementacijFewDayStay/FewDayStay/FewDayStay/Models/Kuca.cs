@@ -19,7 +19,7 @@ namespace FewDayStay.Models
         public bool ImaBazen { get; set; }
 
         //konstruktor,samo da bi se mogla inicijalizirati polja da se visi hoce li ih u bazi ispisati
-        public Kuca(int objID, int brKrev, string name, int kvadra, double cijen, double ocj, int vlID, int lokID)
+        /*public Kuca(int objID, int brKrev, string name, int kvadra, double cijen, double ocj, int vlID, int lokID)
         {
             this.ObjekatID = objID;
             this.BrojKreveta = brKrev;
@@ -28,6 +28,6 @@ namespace FewDayStay.Models
             this.CijenaPoNoci = cijen;
             this.VlasnikID = vlID;
             this.LokacijaID = lokID;
-        }
+        }*/
     }
 }

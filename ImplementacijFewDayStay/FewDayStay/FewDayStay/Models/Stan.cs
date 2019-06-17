@@ -16,7 +16,7 @@ namespace FewDayStay.Models
         public string ImeNaUlazu { get; set;}
 
         //konstruktor,samo da bi se mogla inicijalizirati polja da se visi hoce li ih u bazi ispisati
-        public Stan(int objID, int brKrev, string name, int kvadra, double cijen, double ocj, int vlID, int lokID)
+        /*public Stan(int objID, int brKrev, string name, int kvadra, double cijen, double ocj, int vlID, int lokID)
         {
             //atributi iz "Objkat" klase
             this.ObjekatID = objID;
@@ -28,6 +28,6 @@ namespace FewDayStay.Models
             this.LokacijaID = lokID;
 
             
-        }
+        }*/
     }
 }

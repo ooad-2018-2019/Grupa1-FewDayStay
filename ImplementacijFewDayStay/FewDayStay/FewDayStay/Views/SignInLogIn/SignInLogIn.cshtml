@@ -2,166 +2,172 @@
 <div class="row">
     <!--form je kolekcija za vise unosa, editetxtova i tih tipova-->
     <!--po defaultu idu prvo redovi, pa kolone-->
-    <form class="col-xs-4 panel panel-default col-lg-offset-1 prozirnaPozadina dodajMarginuGore">
 
-        <header class="naslov dodajMarginuGoreIDole">
-            Ovo je forma za SIGN IN
-        </header>
+    @using (Html.BeginForm("ValidateSignIn", "SignInLogIn", FormMethod.Post, new { @class = "col-xs-4 panel panel-default col-lg-offset-1 prozirnaPozadina dodajMarginuGore" }))
+    {
+        <form>
 
-        <!--u "class" tag se mogu staviti vise klasa-->
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="unosImena">Ime </label>
-            </div>
-            <div class="col-xs-10">
-                <input id="unosImena" name="unosImena" type="text" placeholder="Ime" required>
-            </div>
-        </div>
+            <header class="naslov dodajMarginuGoreIDole">
+                Ovo je forma za SIGN IN
+            </header>
 
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="unosPrezimena">Prezime </label>
-            </div>
-            <div class="col-xs-10">
-                <input id="unosPrezimena" name="unosPrezimena" type="text" placeholder="Prezime" required />
-            </div>
-        </div>
-
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="unosEmaila">Email </label>
+            <!--u "class" tag se mogu staviti vise klasa-->
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="unosImena">Ime </label>
+                </div>
+                <div class="col-xs-9">
+                    <input id="unosImena" name="unosImena" type="text" placeholder="Ime" required>
+                </div>
             </div>
 
-            <div class="col-xs-10">
-                <input id="unosEmaila" name="unosEmaila" type="email" placeholder="Email" required />
-            </div>
-        </div>
-
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="unosSifre">Sifra </label>
-            </div>
-
-            <div class="col-xs-10">
-                <!-- "for" iz labele dole zanci da kad kliknes na labelu tu, pocinjes pisati u input, preko "id" -->
-                <input id="unosSifre" name="unosSifre" type="password" placeholder="Sifra" required />
-            </div>
-        </div>
-
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="unosDatumaRodjenja">Datum rodjenja </label>
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="unosPrezimena">Prezime </label>
+                </div>
+                <div class="col-xs-9">
+                    <input id="unosPrezimena" name="unosPrezimena" type="text" placeholder="Prezime" required />
+                </div>
             </div>
 
-            <div class="col-xs-10">
-                <input id="unosDatumaRodjenja" name="unosDatumaRodjenja" type="date" placeholder="Datum rodjenja" required />
-            </div>
-        </div>
-
-        <!--AKO PRODJE SVU VALIDACIJU IZBACI OVAJ MODAL DA POTVRDI DA JE DOBRO PODATKE UNIO-->
-        <div class="row well-sm">
-            <div class="col-xs-12">
-                <!-- "onclick=IME_FUNKCIJE_KOJA_SE_POZIVA" koja je implementirana u "script" tagu -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="prikaziUnesenePodatke()">Zavrsi sa SignIn-om</button>
-            </div>
-        </div>
-
-    </form>
-
-    <script>
-        function prikaziUnesenePodatke()
-        {
-            $("#pregledImena").html($("#unosImena").val());
-            $("#pregledPrezimena").html($("#unosPrezimena").val());
-            $("#pregledEmaila").html($("#unosEmaila").val());
-            $("#pregledDatumaRodjenja").html($("#unosDatumaRodjenja").val());
-        }
-    </script>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Podaci koje ste unijeli su</h4>
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="unosEmaila">Email </label>
                 </div>
 
-                <div class="modal-body">
-
-                    <div class="row well-sm">
-                        <div class="col-xs-2">
-                            <label>Ime </label>
-                        </div>
-                        <div id="pregledImena" class="col-xs-10"></div>                   
-                    </div>
-
-                    <div class="row well-sm">
-                        <div class="col-xs-2">
-                            <label>Prezime </label>
-                        </div>
-                        <div id="pregledPrezimena" class="col-xs-10"></div>
-                    </div>
-
-                    <div class="row well-sm">
-                        <div class="col-xs-2">
-                            <label>Email </label>
-                        </div>
-
-                        <div id="pregledEmaila" class="col-xs-10" ></div>
-                    </div>
-
-                    <div class="row well-sm">
-                        <div class="col-xs-2">
-                            <label>Datum rodjenja </label>
-                        </div>
-
-                        <div id="pregledDatumaRodjenja" class="col-xs-10" ></div>
-                    </div>
-
+                <div class="col-xs-9">
+                    <input id="unosEmaila" name="unosEmaila" type="email" placeholder="Email" required />
                 </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
-                </div>
-
             </div>
 
-        </div>
-    </div>
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="unosSifre">Sifra </label>
+                </div>
+
+                <div class="col-xs-9">
+                    <!-- "for" iz labele dole zanci da kad kliknes na labelu tu, pocinjes pisati u input, preko "id" -->
+                    <input id="unosSifre" name="unosSifre" type="password" placeholder="Sifra" required />
+                </div>
+            </div>
+
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="unosDatumaRodjenja">Datum rodjenja </label>
+                </div>
+
+                <div class="col-xs-9">
+                    <input id="unosDatumaRodjenja" name="unosDatumaRodjenja" type="date" placeholder="Datum rodjenja" required />
+                </div>
+            </div>
+
+            <!--AKO PRODJE SVU VALIDACIJU IZBACI OVAJ MODAL DA POTVRDI DA JE DOBRO PODATKE UNIO-->
+            <div class="row well-sm">
+                <div class="col-xs-12">
+                    <!-- "onclick=IME_FUNKCIJE_KOJA_SE_POZIVA" koja je implementirana u "script" tagu -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="prikaziUnesenePodatke()">Zavrsi sa SignIn-om</button>
+                </div>
+            </div>
+
+            <script>
+                function prikaziUnesenePodatke() {
+                    $("#pregledImena").html($("#unosImena").val());
+                    $("#pregledPrezimena").html($("#unosPrezimena").val());
+                    $("#pregledEmaila").html($("#unosEmaila").val());
+                    $("#pregledDatumaRodjenja").html($("#unosDatumaRodjenja").val());
+                }
+            </script>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Podaci koje ste unijeli su</h4>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="row well-sm">
+                                <div class="col-xs-2">
+                                    <label>Ime </label>
+                                </div>
+                                <div id="pregledImena" class="col-xs-10"></div>
+                            </div>
+
+                            <div class="row well-sm">
+                                <div class="col-xs-2">
+                                    <label>Prezime </label>
+                                </div>
+                                <div id="pregledPrezimena" class="col-xs-10"></div>
+                            </div>
+
+                            <div class="row well-sm">
+                                <div class="col-xs-2">
+                                    <label>Email </label>
+                                </div>
+
+                                <div id="pregledEmaila" class="col-xs-10"></div>
+                            </div>
+
+                            <div class="row well-sm">
+                                <div class="col-xs-2">
+                                    <label>Datum rodjenja </label>
+                                </div>
+
+                                <div id="pregledDatumaRodjenja" class="col-xs-10"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-info">Zatvori</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
 
 
-    <form class="col-xs-4 panel panel-default col-xs-offset-2 prozirnaPozadina dodajMarginuGore">
+        </form>
+    }
 
-        <header class="naslov dodajMarginuGoreIDole">
+    @using (Html.BeginForm("ValidateLogIn", "SignInLogIn", FormMethod.Post, new { @class = "col-xs-4 panel panel-default col-xs-offset-2 prozirnaPozadina dodajMarginuGore" }))
+    {
+        <form>
+
+            <header class="naslov dodajMarginuGoreIDole">
                 Ovo je forma za LOG IN
-        </header>
+            </header>
 
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="loginIme">Ime </label>
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="loginIme">Ime </label>
+                </div>
+                <div class="col-xs-9">
+                    <input name="loginIme" type="text" placeholder="Ime" required>
+                </div>
             </div>
-            <div class="col-xs-10">
-                <input name="loginIme" type="text" placeholder="Ime" required>
-            </div>
-        </div>
 
-        <div class="row well-sm">
-            <div class="col-xs-2">
-                <label for="loginSifra">Sifra </label>
+            <div class="row well-sm">
+                <div class="col-xs-3">
+                    <label for="loginSifra">Sifra </label>
+                </div>
+                <div class="col-xs-9">
+                    <input id="loginSifra" name="loginSifra" type="password" placeholder="Sifra" required />
+                </div>
             </div>
-            <div class="col-xs-10">
-                <input id="loginSifra" name="loginSifra" type="password" placeholder="Sifra" required />
-            </div>
-        </div>
 
-        <div class="row well-sm">
-            <div class="col-xs-12">
-                <button class="btn btn-primary pull-right">Log in</button>
+            <div class="row well-sm">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary pull-left" type="submit">Log in</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    }
 </div>
