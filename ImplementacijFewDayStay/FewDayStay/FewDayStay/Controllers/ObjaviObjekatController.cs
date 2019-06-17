@@ -15,26 +15,63 @@ namespace FewDayStay.Controllers
             return View();
         }
 
-        public IActionResult objavaObjekta(string unosNazivaObjekta, string unosBrojaKreveta, string unosKvadrature, string unosLokacijeObjekta)
+        public IActionResult objavaObjekta(string unosNazivaObjekta, string unosBrojaKreveta, string unosKvadrature, string unosLokacijeObjekta, string unosCijenePoNoci, string radioDugmeStan, string radioDugmeKuca)
         {
             Boolean validno = true;
             var objekti = baza.Objekat.Where((Objekat objekat) => objekat.Naziv.Equals(unosNazivaObjekta));
+            System.Diagnostics.Debug.WriteLine(radioDugmeStan);
             if (objekti.Count() == 0)
             {
                 //logovaniKorisnik je uvijek korisnik, prvo provjera jell vlasnik, ako jest vraca ga, ako nije brise istomenog korisnika i dodaje ga kao vlasnika
-                baza.Objekat.Add(new Stan
+                if(SignInLogInController.logovaniKorisnik is Korisnik)
                 {
-                BrojKreveta = Int32.Parse(unosBrojaKreveta),
-                Kvadratura = Int32.Parse(unosKvadrature),
-                Naziv = unosNazivaObjekta,
-                CijenaPoNoci = 20,
-                Ocjena = 5,
-                Lokacija = baza.Lokacija.Where((Lokacija lokacija) => lokacija.Grad.Equals(unosLokacijeObjekta)).First(),
-                Vlasnik = (Vlasnik)SignInLogInController.logovaniKorisnik,
-                BrojSprata = 0,
-                ImeNaUlazu = ""
-                });
-            baza.SaveChanges();
+                    baza.Add(new Vlasnik
+                    {
+                        Naziv = SignInLogInController.logovaniKorisnik.Naziv,
+                        Email = SignInLogInController.logovaniKorisnik.Email,
+                        Sifra = SignInLogInController.logovaniKorisnik.Sifra,
+                        BrojTelefona = "",
+                        Racun = 0,
+                        Lokacija = baza.Lokacija.First()
+                    });
+                    baza.Osoba.Remove(SignInLogInController.logovaniKorisnik);
+                    baza.SaveChanges();
+                    //znaci zadnji koji je dodan
+                    SignInLogInController.logovaniKorisnik = baza.Osoba.Last();
+                }
+                if (radioDugmeStan!=null && radioDugmeStan.Equals("Stan"))
+                {
+                    baza.Objekat.Add(new Stan
+                    {
+                        BrojKreveta = Int32.Parse(unosBrojaKreveta),
+                        Kvadratura = Int32.Parse(unosKvadrature),
+                        Naziv = unosNazivaObjekta,
+                        CijenaPoNoci = Int32.Parse(unosCijenePoNoci),
+                        Ocjena = 5,
+                        Lokacija = baza.Lokacija.Where((Lokacija lokacija) => lokacija.Grad.Equals(unosLokacijeObjekta)).First(),
+                        Vlasnik = (Vlasnik)SignInLogInController.logovaniKorisnik,
+                        BrojSprata = 0,
+                        ImeNaUlazu = ""
+                    });
+                    baza.SaveChanges();
+                }
+                if (radioDugmeKuca!=null && radioDugmeKuca.Equals("Kuca"))
+                {
+                    baza.Objekat.Add(new Kuca
+                    {
+                        BrojKreveta = Int32.Parse(unosBrojaKreveta),
+                        Kvadratura = Int32.Parse(unosKvadrature),
+                        Naziv = unosNazivaObjekta,
+                        CijenaPoNoci = Int32.Parse(unosCijenePoNoci),
+                        Ocjena = 5,
+                        Lokacija = baza.Lokacija.Where((Lokacija lokacija) => lokacija.Grad.Equals(unosLokacijeObjekta)).First(),
+                        Vlasnik = (Vlasnik)SignInLogInController.logovaniKorisnik,
+                        BrojSpratova = 0,
+                        ImaBazen = false,
+                        ImaDvoriste = false
+                    });
+                    baza.SaveChanges();
+                }
             }
             else validno = false;
             if(validno)
