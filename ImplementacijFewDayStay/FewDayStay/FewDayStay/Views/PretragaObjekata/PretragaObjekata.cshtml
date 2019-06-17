@@ -10,7 +10,7 @@
 
         <div class="dropdown col-xs-4">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Filetri za pretragu
+                Filteri za pretragu
                 <span class="caret">
                 </span>
             </button>
@@ -28,7 +28,23 @@
     </div>
 
     @{
-        List<Objekat> sviObjekti = new List<Objekat>();
+        DBContext baza = DBContext.dajInstancu();
+        //List<Objekat> sviObjekti = new List<Objekat>();
+        /*baza.Objekat.Add(new Stan
+        {
+            BrojKreveta = 5,
+            Kvadratura = 100,
+            Naziv = "nadija",
+            CijenaPoNoci = 20,
+            Ocjena = 5,
+            Lokacija = baza.Lokacija.First(),
+            Vlasnik = (Vlasnik)baza.Osoba.Where((Osoba osoba) => osoba.Naziv.Equals("nedzad")).First(),
+            BrojSprata = 4,
+            ImeNaUlazu = "nadija"
+        });
+        baza.SaveChanges();*/
+        List<Objekat> sviObjekti = baza.Objekat.ToList();
+        System.Diagnostics.Debug.WriteLine(sviObjekti.Count());
         /*sviObjekti.Add(new Stan(1, 4, "Hen apartments", 75, 45, 5.0, 1, 1));
         sviObjekti.Add(new Stan(2, 5, "Mujo airbnb", 150, 75, 4.8, 2, 2));
         sviObjekti.Add(new Stan(3, 6, "Nadija ", 250, 100, 4.9, 3, 3));

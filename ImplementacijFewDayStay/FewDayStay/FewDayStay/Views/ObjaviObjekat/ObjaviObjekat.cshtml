@@ -1,4 +1,6 @@
-﻿<form class="col-xs-7 panel panel-default col-lg-offset-2  dodajMarginuGore">
+﻿@using (Html.BeginForm("objavaObjekta", "ObjaviObjekat", FormMethod.Post))
+{
+<form class="col-xs-7 panel panel-default col-lg-offset-2  dodajMarginuGore">
 
     <!--u "class" tag se mogu staviti vise klasa-->
     <div class="row well-sm dodajMarginuGore">
@@ -79,150 +81,151 @@
         </div>
     </div>
 
+    <script>
+        function prikaziUnesenePodatkeOObjektu() {
+            $("#pregledNazivaObjekta").html($("#unosNazivaObjekta").val());
+            $("#pregledBrojaKreveta").html($("#unosBrojaKreveta").val());
+            $("#pregledKvadrature").html($("#unosKvadrature").val());
+            $("#pregledLokacijeObjekta").html($("#unosLokacijeObjekta").val());
+            $("#pregledSlikeObjekta").html($("#unosSlikaObjekta").val());
+        }
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalZaPrikazDetaljaOUnesenomObjektu" role="dialog">
+        <div class="modal-dialog">
+
+            <!--OVDJE U MODELU SE NALAZI VISE INFORMACIJA NEGO UNITEIH KROZ FORMU, A TO SU IME VLASNIKA,
+                DODATNI ATRIBUTI U ZAVISNOSTI DA LI JE STAN ILI KUCA, ATRIBUT KOJI GOVORI DA JE OBJEKAT STAN ILI KUCA-->
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Podaci koje ste unijeli su</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Naziv </label>
+                        </div>
+                        <div id="pregledNazivaObjekta" class="col-xs-9"></div>
+                    </div>
+
+                    <div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Broj kreveta </label>
+                        </div>
+                        <div id="pregledBrojaKreveta" class="col-xs-9"></div>
+                    </div>
+
+                    <div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Kvadratura </label>
+                        </div>
+
+                        <div id="pregledKvadrature" class="col-xs-9"></div>
+                    </div>
+
+                    <div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Lokacija </label>
+                        </div>
+
+                        <div id="pregledLokacijeObjekta" class="col-xs-9"></div>
+                    </div>
+
+                    <!--<div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Vlasnik </label>
+                        </div>
+
+                        <div id="pregledImenaVlasnika" class="col-xs-9"></div>
+                    </div>-->
+
+                    <div class="row well-sm">
+                        <div class="col-xs-3">
+                            <label>Tip objekta </label>
+                        </div>
+
+                        <div id="pregledTipaObjekta" class="col-xs-9"></div>
+                    </div>
+
+                    <div class="row well-sm dodajMarginuGore">
+                        <div class="col-xs-2 col-sm-offset-5">
+                            <label> Slika </label>
+                        </div>
+                    </div>
+
+                    <div class="row well-sm dodajMarginuGore">
+                        <div class="col-xs-12">
+                            <img id="pregledSlikeObjekta" class="col-xs-9"></img>
+                        </div>
+                    </div>
+
+                    <div class="row well-sm">
+                        <div id="pregledTipaObjekta" class="col-xs-12">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div>
+                        <div class="col-xs-2 col-sm-offset-7">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
+                        </div>
+
+
+                        <div class="col-xs-2">
+                            <button type="submit" class="btn btn-success">Objavi objekat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </form>
+}
 
-<!--preuzeto s linka: "https://bootsnipp.com/snippets/eNbOa"-->
-<!--oavj io koda (java script kod) je potrebno ovdje ngdje ubaciti da bi radilo dobro ovo aploudovanje za slike-->
-<!--$(document).ready( function() {
-        $(document).on('change', '.btn-file :file', function() {
-        var input = $(this),
-            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-        input.trigger('fileselect', [label]);
-        });
+    <!--preuzeto s linka: "https://bootsnipp.com/snippets/eNbOa"-->
+    <!--oavj io koda (java script kod) je potrebno ovdje ngdje ubaciti da bi radilo dobro ovo aploudovanje za slike-->
+    <!--$(document).ready( function() {
+            $(document).on('change', '.btn-file :file', function() {
+            var input = $(this),
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [label]);
+            });
 
-        $('.btn-file :file').on('fileselect', function(event, label) {
+            $('.btn-file :file').on('fileselect', function(event, label) {
 
-            var input = $(this).parents('.input-group').find(':text'),
-                log = label;
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
 
-            if( input.length ) {
-                input.val(log);
-            } else {
-                if( log ) alert(log);
-            }
-
-        });
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#img-upload').attr('src', e.target.result);
+                if( input.length ) {
+                    input.val(log);
+                } else {
+                    if( log ) alert(log);
                 }
 
-                reader.readAsDataURL(input.files[0]);
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
             }
-        }
 
-        $("#imgInp").change(function(){
-            readURL(this);
-        });
-    });-->
-
-<script>
-    function prikaziUnesenePodatkeOObjektu() {
-        $("#unosNazivaObjekta").html($("#unosImena").val());
-        $("#unosBrojaKreveta").html($("#unosPrezimena").val());
-        $("#unosKvadrature").html($("#unosEmaila").val());
-        $("#unosLokacijeObjekta").html($("#unosDatumaRodjenja").val());
-        $("#unosSlikaObjekta").html($("#unosDatumaRodjenja").val());
-    }
-</script>
-
-<!-- Modal -->
-<div class="modal fade" id="modalZaPrikazDetaljaOUnesenomObjektu" role="dialog">
-    <div class="modal-dialog">
-
-        <!--OVDJE U MODELU SE NALAZI VISE INFORMACIJA NEGO UNITEIH KROZ FORMU, A TO SU IME VLASNIKA,
-            DODATNI ATRIBUTI U ZAVISNOSTI DA LI JE STAN ILI KUCA, ATRIBUT KOJI GOVORI DA JE OBJEKAT STAN ILI KUCA-->
-        <!-- Modal content-->
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Podaci koje ste unijeli su</h4>
-            </div>
-
-            <div class="modal-body">
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Naziv </label>
-                    </div>
-                    <div id="pregledNazivaObjekta" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Broj kreveta </label>
-                    </div>
-                    <div id="pregledBrojaKreveta" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Kvadratura </label>
-                    </div>
-
-                    <div id="pregledKvadrature" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Lokacija </label>
-                    </div>
-
-                    <div id="pregledLokacijeObjekta" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Vlasnik </label>
-                    </div>
-
-                    <div id="pregledImenaVlasnika" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-3">
-                        <label>Tip objekta </label>
-                    </div>
-
-                    <div id="pregledTipaObjekta" class="col-xs-9"></div>
-                </div>
-
-                <div class="row well-sm dodajMarginuGore">
-                    <div class="col-xs-2 col-sm-offset-5">
-                        <label> Slika </label>
-                    </div>
-                </div>
-
-                <div class="row well-sm dodajMarginuGore">
-                    <div class="col-xs-12">
-                        <img id="pregledSlikeObjekta" class="col-xs-9"></img>
-                    </div>
-                </div>
-
-                <div class="row well-sm">
-                    <div id="pregledTipaObjekta" class="col-xs-12">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="modal-footer">
-                <div>
-                    <div class="col-xs-2 col-sm-offset-7">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
-                    </div>
-
-
-                    <div class="col-xs-2">
-                        <button type="button" class="btn btn-success">Objavi objekat</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
+            $("#imgInp").change(function(){
+                readURL(this);
+            });
+        });-->

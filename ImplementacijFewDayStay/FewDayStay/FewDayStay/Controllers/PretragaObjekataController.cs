@@ -10,7 +10,7 @@ namespace FewDayStay.Controllers
     {
         public IActionResult PretragaObjekata()
         {
-            return View();
+            return View("PretragaObjekata");
         }
     }
 }
