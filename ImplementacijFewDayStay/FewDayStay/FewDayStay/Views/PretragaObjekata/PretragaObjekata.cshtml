@@ -4,7 +4,7 @@
             <div>
                 <!--"i" najcesce znaci da ce biti nesto napisano koristeci italics-->
                 <i class="fa fa-search position-absolute pt-2 pl-3"></i>
-                <input type="text" class="form-control pl-5" id="filterPoImenuApartmana" placeholder="Filtriraj po imenu objekta">
+                <input type="text" class="form-control pl-5" id="filterPoImenuApartmana" name="filterPoImenuApartmana" placeholder="Filtriraj po imenu objekta">
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             <div>
                 <!--"i" najcesce znaci da ce biti nesto napisano koristeci italics-->
                 <i class="fa fa-search position-absolute pt-2 pl-3"></i>
-                <input type="text" class="form-control pl-5" id="filterPoCijeni" placeholder="Filtriraj po cijeni">
+                <input type="text" class="form-control pl-5" id="filterPoCijeni" name="filterPoCijeni" placeholder="Filtriraj po cijeni">
             </div>
         </div>
 
@@ -20,7 +20,7 @@
             <div>
                 <!--"i" najcesce znaci da ce biti nesto napisano koristeci italics-->
                 <i class="fa fa-search position-absolute pt-2 pl-3"></i>
-                <input type="text" class="form-control pl-5" id="filterPoLokaciji" placeholder="Filtriraj po lokaciji">
+                <input type="text" class="form-control pl-5" id="filterPoLokaciji" name="filterPoLokaciji" placeholder="Filtriraj po lokaciji">
             </div>
         </div>
 
@@ -28,45 +28,24 @@
             <div>
                 <!--"i" najcesce znaci da ce biti nesto napisano koristeci italics-->
                 <i class="fa fa-search position-absolute pt-2 pl-3"></i>
-                <input type="text" class="form-control pl-5" id="filterPoImenuVlasnika" placeholder="Filtriraj po imenu vlasnika">
+                <input type="text" class="form-control pl-5" id="filterPoImenuVlasnika" name="filterPoImenuVlasnika" placeholder="Filtriraj po imenu vlasnika">
             </div>
         </div>
     </div>
-
+    <!--ovdje kod-->
     <div class="row well-sm">
         <div class="col-xs-12 dodajMarginuGoreIDole pull-left">
             <button class="btn btn-default dropdown-toggle" type="button" id="dugmeIzvrsiFiltraciju">
-                Filteriraj objekte
+                Filtriraj objekte
             </button>
         </div>
     </div>
 
+
     @{
         DBContext baza = DBContext.dajInstancu();
-        //List<Objekat> sviObjekti = new List<Objekat>();
-        /*baza.Objekat.Add(new Stan
-        {
-            BrojKreveta = 5,
-            Kvadratura = 100,
-            Naziv = "nadija",
-            CijenaPoNoci = 20,
-            Ocjena = 5,
-            Lokacija = baza.Lokacija.First(),
-            Vlasnik = (Vlasnik)baza.Osoba.Where((Osoba osoba) => osoba.Naziv.Equals("nedzad")).First(),
-            BrojSprata = 4,
-            ImeNaUlazu = "nadija"
-        });
-        baza.SaveChanges();*/
         List<Objekat> sviObjekti = baza.Objekat.ToList();
         System.Diagnostics.Debug.WriteLine(sviObjekti.Count());
-        /*sviObjekti.Add(new Stan(1, 4, "Hen apartments", 75, 45, 5.0, 1, 1));
-        sviObjekti.Add(new Stan(2, 5, "Mujo airbnb", 150, 75, 4.8, 2, 2));
-        sviObjekti.Add(new Stan(3, 6, "Nadija ", 250, 100, 4.9, 3, 3));
-        sviObjekti.Add(new Stan(4, 7, "Džasnim i Hakalo aprtemnts", 15, 25, 1.3, 4, 4));
-        sviObjekti.Add(new Stan(4, 7, "Ehli", 15, 25, 1.3, 4, 4));
-        sviObjekti.Add(new Stan(4, 7, "Dzeni nedostajes mi ceznjo", 15, 25, 1.3, 4, 4));
-        sviObjekti.Add(new Stan(4, 7, "Toni lupas ko lav", 15, 25, 1.3, 4, 4));*/
-
         //ovdje se dodaje filtriranje dobavljenih podatak iz baze, a i samo dobavlajnje iz baze
     }
 
@@ -87,8 +66,8 @@
                         <th>Kvadratura </th>
                         <th>Cijena po noci </th>
                         <th>Ocjena </th>
-                        <th>VlasnikID </th>
-                        <th>LokacijaID </th>
+                        <th>Vlasnik </th>
+                        <th>Lokacija </th>
                     </tr>
 
                     @foreach (var objekat in sviObjekti)
@@ -101,8 +80,8 @@
                             <td class="brojUTabeli">@objekat.Kvadratura</td>
                             <td class="brojUTabeli">@objekat.CijenaPoNoci</td>
                             <td class="brojUTabeli">@objekat.Ocjena</td>
-                            <td class="brojUTabeli">@objekat.VlasnikID</td>
-                            <td class="brojUTabeli">@objekat.LokacijaID</td>
+                            <td class="nazivUTabeli">@baza.Osoba.Where((Osoba o) => o.OsobaID.Equals(objekat.VlasnikID)).First().Naziv</td>
+                            <td class="nazivUTabeli">@baza.Lokacija.Where((Lokacija l) => l.LokacijaID.Equals(objekat.LokacijaID)).First().Grad</td>
                             <td>
                                 @{
                                     var json = Newtonsoft.Json.JsonConvert.SerializeObject(objekat);
