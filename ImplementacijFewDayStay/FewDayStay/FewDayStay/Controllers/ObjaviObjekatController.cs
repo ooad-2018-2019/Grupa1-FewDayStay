@@ -15,11 +15,12 @@ namespace FewDayStay.Controllers
             return View();
         }
 
-        public IActionResult objavaObjekta(string unosNazivaObjekta, string unosBrojaKreveta, string unosKvadrature, string unosLokacijeObjekta, string unosCijenePoNoci, string radioDugmeStan, string radioDugmeKuca)
+        public IActionResult objavaObjekta(string unosNazivaObjekta, string unosBrojaKreveta, string unosKvadrature, string unosLokacijeObjekta, string unosCijenePoNoci, string radioDugme)
         {
             Boolean validno = true;
+            if (SignInLogInController.logovaniKorisnik == null) return View("ObjaviObjekat");
             var objekti = baza.Objekat.Where((Objekat objekat) => objekat.Naziv.Equals(unosNazivaObjekta));
-            System.Diagnostics.Debug.WriteLine(radioDugmeStan);
+            System.Diagnostics.Debug.WriteLine(unosLokacijeObjekta);
             if (objekti.Count() == 0)
             {
                 //logovaniKorisnik je uvijek korisnik, prvo provjera jell vlasnik, ako jest vraca ga, ako nije brise istomenog korisnika i dodaje ga kao vlasnika
@@ -39,7 +40,7 @@ namespace FewDayStay.Controllers
                     //znaci zadnji koji je dodan
                     SignInLogInController.logovaniKorisnik = baza.Osoba.Last();
                 }
-                if (radioDugmeStan!=null && radioDugmeStan.Equals("Stan"))
+                if (radioDugme.Equals("Stan"))
                 {
                     baza.Objekat.Add(new Stan
                     {
@@ -55,7 +56,7 @@ namespace FewDayStay.Controllers
                     });
                     baza.SaveChanges();
                 }
-                if (radioDugmeKuca!=null && radioDugmeKuca.Equals("Kuca"))
+                else
                 {
                     baza.Objekat.Add(new Kuca
                     {
@@ -76,7 +77,7 @@ namespace FewDayStay.Controllers
             else validno = false;
             if(validno)
             return View("../PretragaObjekata/PretragaObjekata");
-            return View("ObjavaObjekta");
+            return View("ObjaviObjekat");
         }
     }
 }

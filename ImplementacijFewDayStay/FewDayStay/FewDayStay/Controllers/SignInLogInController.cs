@@ -10,7 +10,7 @@ namespace FewDayStay.Controllers
     public class SignInLogInController : Controller
     {
         private static DBContext database = DBContext.dajInstancu();
-        public static Osoba logovaniKorisnik;
+        public static Osoba logovaniKorisnik = null;
         public IActionResult SignInLogIn()
         {
             return View("SignInLogIn");
@@ -21,7 +21,7 @@ namespace FewDayStay.Controllers
             Boolean validno = true;
             if (unosImena.Equals("") || unosPrezimena.Equals("") || unosSifre.Equals("") || unosDatumaRodjenja.Equals("") || unosEmaila.Equals("")) validno = false;
 
-            var korisnici = database.Osoba.Where((Osoba osoba) => osoba.Naziv.Equals(unosImena + " " + unosPrezimena));
+            var korisnici = database.Osoba.Where((Osoba osoba) => osoba.Naziv.Equals(unosImena + " " + unosPrezimena) && osoba.Sifra.Equals(unosSifre));
             if (korisnici.Count() == 0)
             {
                 database.Osoba.Add(new Korisnik
