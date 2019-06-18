@@ -18,6 +18,7 @@ namespace FewDayStay.Controllers
         public IActionResult objavaObjekta(string unosNazivaObjekta, string unosBrojaKreveta, string unosKvadrature, string unosLokacijeObjekta, string unosCijenePoNoci, string radioDugme)
         {
             Boolean validno = true;
+            if (double.Parse(unosBrojaKreveta) < 0 || double.Parse(unosCijenePoNoci) < 0 || double.Parse(unosKvadrature) < 0) return View("ObjaviObjekat");
             if (SignInLogInController.logovaniKorisnik == null) return View("ObjaviObjekat");
             var objekti = baza.Objekat.Where((Objekat objekat) => objekat.Naziv.Equals(unosNazivaObjekta));
             System.Diagnostics.Debug.WriteLine(unosLokacijeObjekta);
