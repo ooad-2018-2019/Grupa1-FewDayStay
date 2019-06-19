@@ -1,5 +1,4 @@
-# Grupa1-OMGSestre
-
+# Grupa1-OMGSestre [FewDayStay](https://fewdaystay.azurewebsites.net)
 ![logo](logo.jpg)
 
 ## Tema: Few day stay
