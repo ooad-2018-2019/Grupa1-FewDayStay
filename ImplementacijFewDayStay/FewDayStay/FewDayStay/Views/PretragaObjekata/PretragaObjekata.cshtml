@@ -44,6 +44,8 @@
                     </button>
                 </div>
             </div>
+
+        </div>
     </form>
 }
 
@@ -51,180 +53,185 @@
 @{
     DBContext baza = DBContext.dajInstancu();
     List<Objekat> sviObjekti;
-    if (Model != null) {
+    if (Model != null)
+    {
         sviObjekti = Model;
-        foreach(var objekat in Model)
+        foreach (var objekat in Model)
         {
             System.Diagnostics.Debug.WriteLine(objekat.Naziv);
         }
     }
-    else {
+    else
+    {
         sviObjekti = baza.Objekat.ToList();
     }
     System.Diagnostics.Debug.WriteLine(sviObjekti.Count());
     //ovdje se dodaje filtriranje dobavljenih podatak iz baze, a i samo dobavlajnje iz baze
 }
 
-<div class="row">
-    <div class="col-xs-10">
-        <div class="panel panel-default w-100 dodajMarginuSaSvihStrana">
-            <!-- Default panel contents -->
-            <div class="panel-heading">Filtrirani objekti</div>
+<!-- Modal -->
+@using (Html.BeginForm("iznajmi", "PretragaObjekata", FormMethod.Post))
+{
+    <form>
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="panel panel-default w-100 dodajMarginuSaSvihStrana">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Filtrirani objekti</div>
 
-            <!-- Table -->
-            <table class="dodajMarginuSaSvihStrana">
-                <!--table row-->
-                <tr class="panel panel-success w-100">
-                    <!--table header-->
-                    <th>ObjekatID </th>
-                    <th>Broj kreveta </th>
-                    <th>Naziv </th>
-                    <th>Kvadratura </th>
-                    <th>Cijena po noci </th>
-                    <th>Ocjena </th>
-                    <th>Vlasnik </th>
-                    <th>Lokacija </th>
-                </tr>
+                    <!-- Table -->
+                    <table class="dodajMarginuSaSvihStrana">
+                        <!--table row-->
+                        <tr class="panel panel-success w-100">
+                            <!--table header-->
+                            <th>ObjekatID </th>
+                            <th>Broj kreveta </th>
+                            <th>Naziv </th>
+                            <th>Kvadratura </th>
+                            <th>Cijena po noci </th>
+                            <th>Ocjena </th>
+                            <th>Vlasnik </th>
+                            <th>Lokacija </th>
+                        </tr>
 
-                @foreach (var objekat in sviObjekti)
-                {
-                    <tr class="w-100">
-                        <!--"td" predstavlja jednu celiju u tabeli-->
-                        <td class="brojUTabeli">@objekat.ObjekatID</td>
-                        <td class="brojUTabeli"> @objekat.BrojKreveta</td>
-                        <td class="nazivUTabeli">@objekat.Naziv</td>
-                        <td class="brojUTabeli">@objekat.Kvadratura</td>
-                        <td class="brojUTabeli">@objekat.CijenaPoNoci</td>
-                        <td class="brojUTabeli">@objekat.Ocjena</td>
-                        <td class="nazivUTabeli">@baza.Osoba.Where((Osoba o) => o.OsobaID.Equals(objekat.VlasnikID)).First().Naziv</td>
-                        <td class="nazivUTabeli">@baza.Lokacija.Where((Lokacija l) => l.LokacijaID.Equals(objekat.LokacijaID)).First().Grad</td>
-                        <td>
-                            @{
-                                var json = Newtonsoft.Json.JsonConvert.SerializeObject(objekat);
-                            }
-                            <div class="row well-sm">
-                                <div class="col-xs-12">
-                                    <!-- "onclick=IME_FUNKCIJE_KOJA_SE_POZIVA" koja je implementirana u "script" tagu -->
-                                    <button type="button" class="btn btn-info dodajMarginuSaSvihStrana" data-toggle="modal" data-target="#modalZaObjekte" onclick="prikaziDetaljeOObjektu()">Pogledaj detaljnije</button>
-                                </div>
+                        @foreach (var objekat in sviObjekti)
+                        {
+                            <tr class="w-100">
+                                <!--"td" predstavlja jednu celiju u tabeli-->
+                                <td id="objekatID" class="brojUTabeli">@objekat.ObjekatID</td>
+                                <td id="brojKreveta" class="brojUTabeli"> @objekat.BrojKreveta</td>
+                                <td id="naziv" class="nazivUTabeli">@objekat.Naziv</td>
+                                <td id="kvadratura" class="brojUTabeli">@objekat.Kvadratura</td>
+                                <td id="cijenaPoNoci" class="brojUTabeli">@objekat.CijenaPoNoci</td>
+                                <td id="ocjena" class="brojUTabeli">@objekat.Ocjena</td>
+                                <td id="vlasnik" class="nazivUTabeli">@baza.Osoba.Where((Osoba o) => o.OsobaID.Equals(objekat.VlasnikID)).First().Naziv</td>
+                                <td id="lokacija" class="nazivUTabeli">@baza.Lokacija.Where((Lokacija l) => l.LokacijaID.Equals(objekat.LokacijaID)).First().Grad</td>
+                                <td>
+                                    @{
+                                        var json = Newtonsoft.Json.JsonConvert.SerializeObject(objekat);
+                                    }
+                                    <div class="row well-sm">
+                                        <div class="col-xs-12">
+                                            <!-- "onclick=IME_FUNKCIJE_KOJA_SE_POZIVA" koja je implementirana u "script" tagu -->
+                                            <button type="button" class="btn btn-info dodajMarginuSaSvihStrana" data-toggle="modal" data-target="#modalZaObjekte" onclick="prikaziUnesenePodatke()">Pogledaj detaljnije</button>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                function prikaziUnesenePodatke()
+                                {
+                                    $("#nazivObjekta").html('@objekat.Naziv');
+                                    $("#brojKrevetaObjekta").html('@objekat.BrojKreveta');
+                                    $("#kvadraturaObjekta").html('@objekat.Kvadratura');
+                                    $("#ocjenaObjekta").html('@objekat.Ocjena');
+                                    $("#vlasnikObjekta").html('@baza.Osoba.Where((Osoba o) => o.OsobaID.Equals(objekat.VlasnikID)).First().Naziv');
+                                    $("#lokacijaObjekta").html('@baza.Lokacija.Where((Lokacija l) => l.LokacijaID.Equals(objekat.LokacijaID)).First().Grad');
+                                }
+                                    </script>
+
+                                </td>
+                            </tr>
+                         }
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="modalZaObjekte" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Detalji o objektu</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Naziv objekta </label>
+                            </div>
+                            <div id="nazivObjekta" class="col-xs-8"></div>
+                        </div>
+
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Broj kreveta </label>
+                            </div>
+                            <div id="brojKrevetaObjekta" class="col-xs-8"></div>
+                        </div>
+
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Kvadratura </label>
                             </div>
 
-                            <script>
-                                    function prikaziUnesenePodatke() {
-                                        $(@objekat.Naziv).html($("#nazivObjekta").val());
-                                        $(@objekat.BrojKreveta).html($("#brojKrevetaObjekta").val());
-                                        $(@objekat.Kvadratura).html($("#kvadraturaObjekta").val());
-                                        $(@objekat.Ocjena).html($("#ocjenaObjekta").val());
-                                        $(@objekat.VlasnikID).html($("#vlasnikObjekta").val());
-                                        $(@objekat.LokacijaID).html($("#lokacijaObjekta").val());
-                                    }
-                            </script>
+                            <div id="kvadraturaObjekta" class="col-xs-8"></div>
+                        </div>
 
-                        </td>
-                    </tr>
-                }
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Ocjena </label>
+                            </div>
 
-            </table>
+                            <div id="ocjenaObjekta" class="col-xs-8"></div>
+                        </div>
+
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Vlasnik </label>
+                            </div>
+
+                            <div id="vlasnikObjekta" class="col-xs-8"></div>
+                        </div>
+
+                        <div class="row well-sm">
+                            <div class="col-xs-4">
+                                <label>Lokacija </label>
+                            </div>
+
+                            <div id="lokacijaObjekta" class="col-xs-8"></div>
+                        </div>
+
+                        <!-- kroz ono gore slanje informacija se sigurno moze nekako poslati i da se slike ovdje prikazu-->
+                        <div class="slider-holder">
+                            <span id="slider-image-1"></span>
+                            <span id="slider-image-2"></span>
+                            <span id="slider-image-3"></span>
+                            <div class="image-holder">
+                                <img src="~/images/logo.png" class="slider-image" />
+                                <img src="~/images/banner1.svg" class="slider-image" />
+                                <img src="~/images/banner2.svg" class="slider-image" />
+                            </div>
+
+                            <div class="button-holder">
+                                <a href="#slider-image-1" class="slider-change"></a>
+                                <a href="#slider-image-2" class="slider-change"></a>
+                                <a href="#slider-image-3" class="slider-change"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="row well-sm">
+                            <div class="col-xs-2 col-sm-offset-8">
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <button type="submit" class="btn btn-success">Iznajmi</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalZaObjekte" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Detalji o objektu</h4>
-            </div>
-
-            <div class="modal-body">
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Naziv objekta </label>
-                    </div>
-                    <div id="nazivObjekta" class="col-xs-8"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Broj kreveta </label>
-                    </div>
-                    <div id="brojKrevetaObjekta" class="col-xs-8"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Kvadratura </label>
-                    </div>
-
-                    <div id="kvadraturaObjekta" class="col-xs-8"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Ocjena </label>
-                    </div>
-
-                    <div id="ocjenaObjekta" class="col-xs-8"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Vlasnik </label>
-                    </div>
-
-                    <div id="vlasnikObjekta" class="col-xs-8"></div>
-                </div>
-
-                <div class="row well-sm">
-                    <div class="col-xs-4">
-                        <label>Lokacija </label>
-                    </div>
-
-                    <div id="lokacijaObjekta" class="col-xs-8"></div>
-                </div>
-
-                <!-- kroz ono gore slanje informacija se sigurno moze nekako poslati i da se slike ovdje prikazu-->
-                <div class="slider-holder">
-                    <span id="slider-image-1"></span>
-                    <span id="slider-image-2"></span>
-                    <span id="slider-image-3"></span>
-                    <div class="image-holder">
-                        <img src="~/images/logo.png" class="slider-image" />
-                        <img src="~/images/banner1.svg" class="slider-image" />
-                        <img src="~/images/banner2.svg" class="slider-image" />
-                    </div>
-
-                    <div class="button-holder">
-                        <a href="#slider-image-1" class="slider-change"></a>
-                        <a href="#slider-image-2" class="slider-change"></a>
-                        <a href="#slider-image-3" class="slider-change"></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="modal-footer">
-                <div class="row well-sm">
-                    <div class="col-xs-2 col-sm-offset-8">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
-                    </div>
-
-                    <div class="col-xs-2">
-                        <button type="button" class="btn btn-success">Iznajmi</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-    </div>
+    </form>
+}

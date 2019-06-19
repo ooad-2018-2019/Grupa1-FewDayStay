@@ -72,7 +72,7 @@ using FewDayStay.Models;
             WriteLiteral("    ");
             EndContext();
             BeginContext(313, 10208, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cfdc26941f594f7ca4a2b21148945c0c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20887a24f90c425ab083ffe59df0e934", async() => {
                 BeginContext(319, 1556, true);
                 WriteLiteral(@"
 
@@ -128,7 +128,7 @@ using FewDayStay.Models;
                 WriteLiteral("                            ");
                 EndContext();
                 BeginContext(1994, 54, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f47b096d97441a2af70399b0c95b53f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f41982477fe44463af215ea40891a2a8", async() => {
                     BeginContext(2026, 13, false);
 #line 52 "C:\Users\nadij\Source\Repos\Grupa1-FewDayStay2\ImplementacijFewDayStay\FewDayStay\FewDayStay\Views\ObjaviObjekat\ObjaviObjekat.cshtml"
                                                       Write(lokacija.Grad);

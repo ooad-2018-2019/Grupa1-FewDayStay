@@ -9,13 +9,14 @@ namespace FewDayStay.Controllers
 {
     public class PretragaObjekataController : Controller
     {
+        DBContext baza = DBContext.dajInstancu();
         public IActionResult PretragaObjekata()
         {
             return View("PretragaObjekata");
         }
         public IActionResult filtriranje(string filterPoImenuApartmana, string filterPoCijeni, string filterPoLokaciji, string filterPoImenuVlasnika)
         {
-            DBContext baza = DBContext.dajInstancu();
+            
             List<Objekat> objekti = baza.Objekat.ToList();
             if (filterPoImenuApartmana!=null)
             {
@@ -37,6 +38,19 @@ namespace FewDayStay.Controllers
                 objekti = baza.Objekat.Where((Objekat o) => o.VlasnikID.Equals(imeVlasnika.OsobaID)).ToList();
             }
             return View("PretragaObjekata", objekti);
+        }
+        public IActionResult iznajmi(string nazivObjekta)
+        {
+            System.Diagnostics.Debug.WriteLine(nazivObjekta);
+            baza.Iznajmljivanje.Add(new Iznajmljivanje
+            {
+                KorisnikID = SignInLogInController.logovaniKorisnik.OsobaID,
+                ObjekatID = baza.Objekat.Where((Objekat o) => o.Naziv.Equals("NadijaFewDayStay")).First().ObjekatID,
+                PocetniDatum = DateTime.Now,
+                KrajnjiDatum = DateTime.Now
+            });
+            baza.SaveChanges();
+            return View("PretragaObjekata");
         }
     }
 }
